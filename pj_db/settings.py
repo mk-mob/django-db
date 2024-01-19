@@ -70,12 +70,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'pj_db.wsgi.application'
 
-import dj_database_url
-from dotenv import (
-    find_dotenv,
-    load_dotenv,
-)
-load_dotenv(find_dotenv())
+# import dj_database_url
+# from dotenv import (
+#     find_dotenv,
+#     load_dotenv,
+# )
+# load_dotenv(find_dotenv())
 
 # DATABASES = {
 #     'default': {
@@ -87,20 +87,20 @@ load_dotenv(find_dotenv())
 #         'PORT': '3306',
 #     }
 # }
-DATABASES = {
-    'default':dj_database_url.config(conn_max_age=600)
-}
-
-
-# # Database
-# # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
+#     'default':dj_database_url.config(conn_max_age=600)
 # }
+
+
+# Database
+# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': str(BASE_DIR / 'db.sqlite3'),
+    }
+}
 
 
 
